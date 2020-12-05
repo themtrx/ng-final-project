@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+JP:wght@400;700&display=swap');
+@import 'https://use.fontawesome.com/releases/v5.10.2/css/all.css';
+
+:root {
+    --dark-purple: #AF99FF;
+    --purple: #CAADFF;
+    --red-pastel: #FF99B6;
+    --red-touch: #FFC2E2;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
