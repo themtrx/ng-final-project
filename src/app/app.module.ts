@@ -8,6 +8,8 @@ import { FooterComponent } from './core/footer/footer.component';
 import { PublicComponent } from './core/public/public.component';
 import { ChallengesListComponent } from './core/challenges-list/challenges-list.component';
 import { GetChallengeComponent } from './core/get-challenge/get-challenge.component';
+import { RegisterComponent } from './core/register/register.component';
+import { LoginComponent } from './core/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { GetChallengeComponent } from './core/get-challenge/get-challenge.compon
     FooterComponent,
     PublicComponent,
     ChallengesListComponent,
-    GetChallengeComponent
+    GetChallengeComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
