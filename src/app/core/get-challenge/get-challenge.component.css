@@ -1,0 +1,79 @@
+section {
+    padding-top: 100px;
+    margin-bottom: 180px !important;
+}
+
+section h2 {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+    margin: 0 0 50px;
+}
+
+.new-challenge {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.new-challenge img {
+    max-width: 450px;
+    max-height: 400px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 5px rgb(92, 91, 91);
+}
+
+.challenge-info {
+    align-self: center;
+    padding: 30px 70px;
+    background-color: #eee;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px 5px rgb(92, 91, 91);
+}
+
+.challenge-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+}
+
+.challenge-info ol {
+    padding-left: 0;
+}
+
+.challenge-info ol li {
+    margin-bottom: 5px;
+}
+
+.challenge-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.challenge-buttons a {
+    padding: 10px;
+    font-weight: bold;
+    background: var(--purple);
+    color: #fff;
+    transition: all .2s;
+}
+
+.challenge-buttons a:hover {
+    color: var(--red-touch);
+}
+
+.challenge-buttons a:first-child {
+    margin-right: 20px;
+}
+
+.challenge-buttons a i {
+    margin-right: 5px;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+.challenge-buttons a span {
+    vertical-align: middle;
+}
