@@ -1,0 +1,10 @@
+footer {
+    background-color: var(--purple);
+}
+
+footer p{
+    margin: 0;
+    padding: 40px 0;
+    text-align: center;
+    color: #fff;
+}
