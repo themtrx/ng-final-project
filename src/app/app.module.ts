@@ -10,6 +10,7 @@ import { ChallengesListComponent } from './core/challenges-list/challenges-list.
 import { GetChallengeComponent } from './core/get-challenge/get-challenge.component';
 import { RegisterComponent } from './core/register/register.component';
 import { LoginComponent } from './core/login/login.component';
+import { ViewChallengeComponent } from './core/view-challenge/view-challenge.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './core/login/login.component';
     ChallengesListComponent,
     GetChallengeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ViewChallengeComponent
   ],
   imports: [
     BrowserModule,

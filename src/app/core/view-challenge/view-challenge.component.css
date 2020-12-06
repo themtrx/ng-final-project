@@ -1,0 +1,57 @@
+section {
+    margin-bottom: 50px !important;
+}
+section h2 {
+    margin: 70px 0 50px;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+}
+.view-challenge {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.view-challenge img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    max-height: 400px;
+}
+.challenge-info ol li {
+    margin-bottom: 10px;
+}
+#status {
+    width: 30%;
+}
+
+label[for=publishCheck] {
+    padding-left: 10px;
+}
+
+textarea#comment {
+    resize: none;
+}
+
+.challenge-buttons {
+    display: flex;
+}
+
+.challenge-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.challenge-buttons a {
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    font-weight: bold;
+    background: var(--purple);
+    color: #fff;
+    transition: all .2s;
+}
+
+.challenge-buttons a:hover {
+    color: var(--red-touch);
+}
