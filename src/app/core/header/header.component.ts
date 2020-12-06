@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isLogged: boolean
 
-  constructor() { }
+  constructor() {
+
+    this.isLogged = true
+  }
 
   ngOnInit(): void {
   }
