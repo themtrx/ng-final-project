@@ -1,8 +1,9 @@
 <section class="container">
     <h2>Pick a new challenge!</h2>
     <div class="new-challenge">
-        <div *ngIf="loader">Loader....</div>
-        <img *ngIf="!loader" [src]="challenge.img" alt="busywork">
+        <div class="loader" *ngIf="loader && !errorMessage.error">Loading....</div>
+        <div class="err-msg" *ngIf="errorMessage.error">{{ errorMessage.msg }}</div>
+        <img *ngIf="!loader && !errorMessage.error" [src]="challenge.img" alt="busywork">
         <div class="challenge-info">
             <h3>{{challenge.activity}}</h3>
             <ol>
@@ -10,7 +11,12 @@
                 <li>Participants: {{challenge.participants}}</li>
                 <li>Price rating: {{challenge.price}}</li>
                 <li>Accessibility: {{challenge.accessibility}}</li>
-                <li>Link: {{challenge.link? challenge.link: 'There is no link for this challenge!'}}</li>
+                <li *ngIf="!challenge.link">
+                    Link: There is no link for this challenge!
+                </li>
+                <li *ngIf="challenge.link">Link: 
+                    <a [href]="challenge.link">Additional information</a>
+                </li>
             </ol>
             <div class="challenge-buttons">
                 <a (click)="renderChallenge()">

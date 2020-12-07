@@ -20,7 +20,13 @@ section h2 {
     max-width: 450px;
     max-height: 400px;
     border-radius: 15px;
-    box-shadow: 0px 0px 15px 5px rgb(92, 91, 91);
+    /* box-shadow: 0px 0px 15px 5px rgb(92, 91, 91); */
+}
+
+.loader, .err-msg {
+    width: 400px;
+    text-align: center;
+    align-self: center;
 }
 
 .challenge-info {
