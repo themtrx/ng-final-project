@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map,tap } from 'rxjs/operators'
+import { map,tap, catchError } from 'rxjs/operators'
 
 import { IGetChallenge } from '../interfaces/getChallenge'
 
@@ -44,7 +44,7 @@ export class ChallengesService {
       if(!randomPage){
         randomPage = 1
       }
-      
+
       return this.http.get(`https://api.unsplash.com/search/photos?page=${randomPage}&query=${searchWord}&client_id=ZDgXw5Xy3RNbAsqcq0_OQ_frLbWoglntBi8-tq8jyTw`)
     }
 }
