@@ -26,6 +26,7 @@ section h2 {
 .challenge-info {
     align-self: center;
     padding: 30px 70px;
+    max-width: 514px;
     background-color: #eee;
     border-radius: 15px;
     box-sizing: border-box;
@@ -58,6 +59,7 @@ section h2 {
     background: var(--purple);
     color: #fff;
     transition: all .2s;
+    cursor: pointer;
 }
 
 .challenge-buttons a:hover {
