@@ -1,122 +1,22 @@
 <section class="container">
-    <article>
-            <img src="https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="busywork">
+    <article *ngFor="let challenge of allChallenges">
+            <img [src]="challenge.img" [alt]="challenge.type">
         <div class="info-wrap">
-            <h2>Organize a cluttered drawer</h2>
+            <h2>{{ challenge.activity }}</h2>
             <ol>
-                <li>Type: busywork</li>
-                <li>Participants: 1</li>
-                <li>Status: In Progress</li>
+                <li>Type: {{ challenge.type }}</li>
+                <li>Participants: {{ challenge.participants }}</li>
+                <li>Status: {{ challenge.status }}</li>
             </ol>
             <div class="view-challenge-wrap">
-                <a href="#" class="view-challenge-btn">
+                <a [routerLink]="['/challenges/view/', challenge._id ]" class="view-challenge-btn">
                     Vew Challenge
                 </a>
             </div>
         </div>
-        <!-- <span class="status-icon icon-complete"><i class="fas fa-check-circle"></i></span> -->
-        <!-- <span class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span> -->
-        <!-- <span class="status-icon icon-delay"><i class="fas fa-clock"></i></span> -->
-        <span class="status-icon icon-progress"><i class="fas fa-cogs"></i></span>
-    </article>
-    <article>
-        <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1061&q=80" alt="busywork">
-        <div class="info-wrap">
-            <h2>Organize a cluttered drawer</h2>
-            <ol>
-                <li>Type: busywork</li>
-                <li>Participants: 1</li>
-                <li>Status: In Progress</li>
-            </ol>
-            <div class="view-challenge-wrap">
-                <a [routerLink]="['/challenges/view/', '1']" class="view-challenge-btn">
-                    Vew Challenge
-                </a>
-            </div>
-        </div>
-        <!-- <span class="status-icon icon-complete"><i class="fas fa-check-circle"></i></span> -->
-        <!-- <span class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span> -->
-        <span class="status-icon icon-delay"><i class="fas fa-clock"></i></span>
-        <!-- <span class="status-icon icon-progress"><i class="fas fa-cogs"></i></span> -->
-    </article>
-    <article>
-        <img src="https://images.unsplash.com/photo-1470145318698-cb03732f5ddf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="busywork">
-        <div class="info-wrap">
-            <h2>Organize a cluttered drawer</h2>
-            <ol>
-                <li>Type: busywork</li>
-                <li>Participants: 1</li>
-                <li>Status: In Progress</li>
-            </ol>
-            <div class="view-challenge-wrap">
-                <a href="#" class="view-challenge-btn">
-                    Vew Challenge
-                </a>
-            </div>
-        </div>
-        <!-- <span class="status-icon icon-complete"><i class="fas fa-check-circle"></i></span> -->
-        <span class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span>
-        <!-- <span class="status-icon icon-delay"><i class="fas fa-clock"></i></span> -->
-        <!-- <span class="status-icon icon-progress"><i class="fas fa-cogs"></i></span> -->
-    </article>
-    <article>
-        <img src="https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="busywork">
-        <div class="info-wrap">
-            <h2>Organize a cluttered drawer</h2>
-            <ol>
-                <li>Type: busywork</li>
-                <li>Participants: 1</li>
-                <li>Status: In Progress</li>
-            </ol>
-            <div class="view-challenge-wrap">
-                <a href="#" class="view-challenge-btn">
-                    Vew Challenge
-                </a>
-            </div>
-        </div>
-        <span class="status-icon icon-complete"><i class="fas fa-check-circle"></i></span>
-        <!-- <span class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span> -->
-        <!-- <span class="status-icon icon-delay"><i class="fas fa-clock"></i></span> -->
-        <!-- <span class="status-icon icon-progress"><i class="fas fa-cogs"></i></span> -->
-    </article>
-    <article>
-        <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1061&q=80" alt="busywork">
-        <div class="info-wrap">
-            <h2>Organize a cluttered drawer</h2>
-            <ol>
-                <li>Type: busywork</li>
-                <li>Participants: 1</li>
-                <li>Status: In Progress</li>
-            </ol>
-            <div class="view-challenge-wrap">
-                <a href="#" class="view-challenge-btn">
-                    Vew Challenge
-                </a>
-            </div>
-        </div>
-        <!-- <span class="status-icon icon-complete"><i class="fas fa-check-circle"></i></span> -->
-        <!-- <span class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span> -->
-        <!-- <span class="status-icon icon-delay"><i class="fas fa-clock"></i></span> -->
-        <span class="status-icon icon-progress"><i class="fas fa-cogs"></i></span>
-    </article>
-    <article>
-        <img src="https://images.unsplash.com/photo-1470145318698-cb03732f5ddf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="busywork">
-        <div class="info-wrap">
-            <h2>Organize a cluttered drawer</h2>
-            <ol>
-                <li>Type: busywork</li>
-                <li>Participants: 1</li>
-                <li>Status: In Progress</li>
-            </ol>
-            <div class="view-challenge-wrap">
-                <a href="#" class="view-challenge-btn">
-                    Vew Challenge
-                </a>
-            </div>
-        </div>
-        <!-- <span class="status-icon icon-complete"><i class="fas fa-check-circle"></i></span> -->
-        <!-- <span class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span> -->
-        <!-- <span class="status-icon icon-delay"><i class="fas fa-clock"></i></span> -->
-        <span class="status-icon icon-progress"><i class="fas fa-cogs"></i></span>
+        <span *ngIf="challenge.status === 'Completed'" class="status-icon icon-complete"><i class="fas fa-check-circle"></i></span>
+        <span *ngIf="challenge.status === 'Declined'" class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span>
+        <span *ngIf="challenge.status === 'Delayed'" class="status-icon icon-delay"><i class="fas fa-clock"></i></span>
+        <span *ngIf="challenge.status === 'In Progress'" class="status-icon icon-progress"><i class="fas fa-cogs"></i></span>
     </article>
 </section>

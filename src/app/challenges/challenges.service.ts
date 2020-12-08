@@ -47,4 +47,8 @@ export class ChallengesService {
 
       return this.http.get(`https://api.unsplash.com/search/photos?page=${randomPage}&query=${searchWord}&client_id=ZDgXw5Xy3RNbAsqcq0_OQ_frLbWoglntBi8-tq8jyTw`)
     }
+
+    getAllChallenges(){
+      return this.http.get(`http://localhost:9999/api/activity`)
+    }
 }
