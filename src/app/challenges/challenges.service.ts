@@ -51,4 +51,8 @@ export class ChallengesService {
     getAllChallenges(){
       return this.http.get(`http://localhost:9999/api/activity`)
     }
+
+    viewChallenge(id: number): Observable<any> {
+      return this.http.get(`http://localhost:9999/api/activity/${id}`)
+    }
 }

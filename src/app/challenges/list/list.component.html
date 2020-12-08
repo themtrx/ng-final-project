@@ -1,5 +1,9 @@
 <section class="container">
-    <article *ngFor="let challenge of allChallenges">
+    <app-challenge-card 
+        *ngFor="let challenge of allChallenges"
+        [challenge]="challenge">
+    </app-challenge-card>
+    <!-- <article *ngFor="let challenge of allChallenges">
             <img [src]="challenge.img" [alt]="challenge.type">
         <div class="info-wrap">
             <h2>{{ challenge.activity }}</h2>
@@ -18,5 +22,5 @@
         <span *ngIf="challenge.status === 'Declined'" class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span>
         <span *ngIf="challenge.status === 'Delayed'" class="status-icon icon-delay"><i class="fas fa-clock"></i></span>
         <span *ngIf="challenge.status === 'In Progress'" class="status-icon icon-progress"><i class="fas fa-cogs"></i></span>
-    </article>
+    </article> -->
 </section>
