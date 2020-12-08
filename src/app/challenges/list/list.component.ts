@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChallengesService } from '../challenges.service';
 
 @Component({
   selector: 'app-challenges-list',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChallengesListComponent implements OnInit {
 
-  constructor() { }
+@Input() allChallenges: any[]
+
+  constructor(public challengeService: ChallengesService) { }
 
   ngOnInit(): void {
-    
+    this.challengeService.getAllChallenges().subscribe((challenge: any) => {
+      this.allChallenges = challenge
+    })
   }
 
 }
