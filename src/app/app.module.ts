@@ -8,6 +8,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { CoreModule } from './core/core.module';
 import { ChallengesModule } from './challenges/challenges.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -28,6 +29,7 @@ import { ChallengesService } from './challenges/challenges.service';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MatProgressSpinnerModule,
+    SharedModule
   ],
   providers: [
     ChallengesService

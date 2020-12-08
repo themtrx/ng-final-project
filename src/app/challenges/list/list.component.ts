@@ -10,7 +10,7 @@ export class ChallengesListComponent implements OnInit {
 
 @Input() allChallenges: any[]
 
-  constructor(public challengeService: ChallengesService) { }
+  constructor(public challengeService: ChallengesService) {  }
 
   ngOnInit(): void {
     this.challengeService.getAllChallenges().subscribe((challenge: any) => {
