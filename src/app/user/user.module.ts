@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '../guards/auth-guard.guard';
 
 
 
@@ -18,6 +19,9 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     SharedModule,
     RouterModule
+  ],
+  providers: [
+    AuthGuard
   ],
   exports: [
     RegisterComponent,

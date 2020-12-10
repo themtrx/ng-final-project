@@ -12,7 +12,6 @@ export class ChallengeCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.challenge)
   }
 
 }

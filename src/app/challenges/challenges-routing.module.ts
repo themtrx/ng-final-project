@@ -1,4 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '../guards/auth-guard.guard';
 import { GetChallengeComponent } from './get/get-challenge.component';
 import { ChallengesListComponent } from './list/list.component';
 import { ViewChallengeComponent } from './view/view.component';
@@ -6,22 +7,35 @@ import { ViewChallengeComponent } from './view/view.component';
 const routes: Routes = [
   {
     path: 'challenges',
+    canActivateChild: [AuthGuard],
     children: [
         {
             path: 'list',
-            component: ChallengesListComponent
+            component: ChallengesListComponent,
+            data: {
+              isLogged: true
+            }
           },
           {
             path: 'view/:id',
-            component: ViewChallengeComponent
+            component: ViewChallengeComponent,
+            data: {
+              isLogged: true
+            }
           },
           {
             path: 'get',
-            component: GetChallengeComponent
+            component: GetChallengeComponent,
+            data: {
+              isLogged: true
+            }
           },
           {
             path: 'my',
-            component: ChallengesListComponent
+            component: ChallengesListComponent,
+            data: {
+              isLogged: true
+            }
           }
     ]
   }
