@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   loginImg: string;
 
-  constructor() {
+  constructor(private userService: UserService) {
     this.loginImg = '../../../assets/img/login.png'
 
   }
 
+  loginHandler(data: Object) {
+    this.userService.login(data).subscribe({
+      next : (res) => {
+        console.log(res)
+      }
+    })
+  }
+
   ngOnInit(): void {
+
   }
 
 }

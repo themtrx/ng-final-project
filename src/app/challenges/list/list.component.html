@@ -3,24 +3,4 @@
         *ngFor="let challenge of allChallenges"
         [challenge]="challenge">
     </app-challenge-card>
-    <!-- <article *ngFor="let challenge of allChallenges">
-            <img [src]="challenge.img" [alt]="challenge.type">
-        <div class="info-wrap">
-            <h2>{{ challenge.activity }}</h2>
-            <ol>
-                <li>Type: {{ challenge.type }}</li>
-                <li>Participants: {{ challenge.participants }}</li>
-                <li>Status: {{ challenge.status }}</li>
-            </ol>
-            <div class="view-challenge-wrap">
-                <a [routerLink]="['/challenges/view/', challenge._id ]" class="view-challenge-btn">
-                    Vew Challenge
-                </a>
-            </div>
-        </div>
-        <span *ngIf="challenge.status === 'Completed'" class="status-icon icon-complete"><i class="fas fa-check-circle"></i></span>
-        <span *ngIf="challenge.status === 'Declined'" class="status-icon icon-decline"><i class="fas fa-times-circle"></i></span>
-        <span *ngIf="challenge.status === 'Delayed'" class="status-icon icon-delay"><i class="fas fa-clock"></i></span>
-        <span *ngIf="challenge.status === 'In Progress'" class="status-icon icon-progress"><i class="fas fa-cogs"></i></span>
-    </article> -->
 </section>

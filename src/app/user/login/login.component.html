@@ -1,0 +1,14 @@
+<section class="container"> 
+    <img [src]="loginImg" alt="login">
+    <form #f="ngForm" class="reg-form" (ngSubmit)="loginHandler(f.value)">
+        <label for="username">Username: </label>
+        <input #usernameInp="ngModel" type="text" name="username" id="username" ngModel required>
+        <div *ngIf="usernameInp.touched && usernameInp.errors?.required"  class="error-msg">Username is required!</div>
+        <label for="password">Password: </label>
+        <input #passwordInp="ngModel" type="password" name="password" id="password" ngModel required>
+        <div *ngIf="passwordInp.touched && passwordInp.errors?.required"  class="error-msg">Password is required!</div>
+        <button id="regBtn" [disabled]="f.invalid">Login</button>
+        <p>If you don't have account <a routerLink="/user/register">Register</a></p>
+    </form>
+</section>
+<app-footer></app-footer>

@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { ChallengesService } from './challenges/challenges.service';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ChallengesService } from './challenges/challenges.service';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MatProgressSpinnerModule,
-    SharedModule
+    SharedModule,
+    UserModule
   ],
   providers: [
     ChallengesService
