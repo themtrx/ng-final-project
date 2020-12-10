@@ -5,16 +5,11 @@ import { RouterModule } from '@angular/router';
 import { ChallengesModule } from '../challenges/challenges.module';
 
 import { PublicComponent } from './public/public.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-
 
 
 @NgModule({
   declarations: [
     PublicComponent,
-    LoginComponent,
-    RegisterComponent,
   ],
   imports: [
     CommonModule,
@@ -24,8 +19,6 @@ import { RegisterComponent } from './register/register.component';
   ],
   exports: [
     PublicComponent,
-    LoginComponent,
-    RegisterComponent,
   ]
 })
 export class CoreModule { }
