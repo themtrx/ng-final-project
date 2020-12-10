@@ -14,6 +14,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { ChallengesService } from './challenges/challenges.service';
 import { UserModule } from './user/user.module';
+import { AuthGuard } from './guards/auth-guard.guard';
+import { UserRoutingModule } from './user/user-routing.module';
+import { ChallengesRoutingModule } from './challenges/challenges-routing.module'
 
 
 @NgModule({
@@ -24,6 +27,8 @@ import { UserModule } from './user/user.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserRoutingModule,
+    ChallengesRoutingModule,
     CoreModule,
     ChallengesModule,
     HttpClientModule,
@@ -34,7 +39,8 @@ import { UserModule } from './user/user.module';
     UserModule
   ],
   providers: [
-    ChallengesService
+    ChallengesService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
