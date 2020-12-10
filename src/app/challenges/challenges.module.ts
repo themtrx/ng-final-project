@@ -8,6 +8,7 @@ import { GetChallengeComponent } from './get/get-challenge.component';
 import { SharedModule } from '../shared/shared.module';
 import { ChallengeCardComponent } from './challenge-card/challenge-card.component';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '../guards/auth-guard.guard';
 
 
 
@@ -22,6 +23,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SharedModule,
     RouterModule
+  ],
+  providers: [
+    AuthGuard
   ],
   exports: [
     ChallengesListComponent,

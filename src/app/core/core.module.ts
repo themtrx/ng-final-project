@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ChallengesModule } from '../challenges/challenges.module';
 
 import { PublicComponent } from './public/public.component';
+import { AuthGuard } from '../guards/auth-guard.guard';
 
 
 @NgModule({
@@ -16,6 +17,9 @@ import { PublicComponent } from './public/public.component';
     SharedModule,
     RouterModule,
     ChallengesModule
+  ],
+  providers: [
+    AuthGuard
   ],
   exports: [
     PublicComponent,
