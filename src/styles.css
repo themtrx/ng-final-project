@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+JP:wght@400;700&display=swap');
 @import 'https://use.fontawesome.com/releases/v5.10.2/css/all.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 :root {
     --dark-purple: #AF99FF;
@@ -31,7 +32,24 @@ ul, ol {
     list-style-type: none;
 }
 
+section {
+    position: relative;
+}
+
 .container {
     width: 90%;
     margin: 0 auto;
+}
+
+.error-msg {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    padding: 15px 10px;
+    border: 1px solid red;
+    background: var(--red-touch);
+    border-radius: 10px;
+    min-width: 250px;
+    text-align: center;
+    color: red;
 }

@@ -19,14 +19,33 @@ export class LoginComponent implements OnInit {
 
   }
 
-  loginHandler(data: Object) {
+  loginHandler({username, password}: {username: string, password: string}) : void {
     this.errormsg = '';
-    this.userService.login(data).subscribe({
+
+    if(username.length < 5){
+      this.errormsg = 'Username should be atleast 5 letters!'
+       return
+    }
+    if(password.length < 5){
+      this.errormsg = 'Password should be atleast 5 characters!'
+      return
+    }
+
+    this.userService.login({username, password}).subscribe({
       next : (res) => {
+        const checkForEmpty = Object.keys(res).length
+
+        if(!checkForEmpty) {
+          this.errormsg = 'Invalid username or password!'
+          return
+        }
+
         this.router.navigate(['challenges/get'])
       },
-      error: (err) => {
-        this.errormsg = 'Error!'
+      error: (res) => {
+        if(res.status === 401){
+          this.errormsg = res.error.message
+        }
       }
     })
   }

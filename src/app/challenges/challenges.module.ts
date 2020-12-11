@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ChallengeCardComponent } from './challenge-card/challenge-card.component';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../guards/auth-guard.guard';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -22,7 +23,8 @@ import { AuthGuard } from '../guards/auth-guard.guard';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AuthGuard

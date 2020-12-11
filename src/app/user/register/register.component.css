@@ -35,6 +35,9 @@ section img {
     border-radius: 15px;
     transition: all .2s;
     box-sizing: border-box;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 #regBtn:hover {

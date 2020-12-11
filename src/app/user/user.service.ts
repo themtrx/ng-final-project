@@ -15,7 +15,12 @@ export class UserService {
   currentUser: any
 
   constructor(private http: HttpClient) { }
-  
+
+  register(data: Object): Observable<any> {
+    return this.http.post('http://localhost:9999/api/user/register', data, {withCredentials: true}).pipe(
+      tap((user: any) => this.currentUser = user))
+  }
+
   getProfile(): Observable<any> {
     return this.http.get('http://localhost:9999/api/user/profile', {withCredentials: true}).pipe(
       tap(((username: any) => this.currentUser = username)),
