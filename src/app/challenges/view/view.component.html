@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" [class.noAuthor]="!isAuthor">
     <h2>
         View Challenge:
         <span>{{ challenge.activity }}</span>
@@ -17,7 +17,7 @@
                 <li *ngIf="challenge.link">Link: 
                     <a [href]="challenge.link">Additional information</a>
                 </li>
-                <li>
+                <li *ngIf="isAuthor">
                     Challenge Status:
                     <select name="status" id="status" >
                         <option 
@@ -41,11 +41,14 @@
                         </option>
                     </select>
                 </li>
-                <li>
+                <li *ngIf="!isAuthor">
+                    Challenge Status: {{ challenge.status }}
+                </li>
+                <li *ngIf="isAuthor">
                     <input type="checkbox" id="publishCheck" [checked]="challenge.published || false">
                     <label for="publishCheck">Share with others</label>
                 </li>
-                <li>
+                <li *ngIf="isAuthor">
                     <textarea 
                         name="comment" 
                         id="comment" 
@@ -54,12 +57,18 @@
                         maxlength="600" 
                         placeholder="Share your thoughts about the challenge....">{{ challenge.comment}}</textarea>
                 </li>
+                <li *ngIf="!isAuthor">
+                    Challenge comment:
+                    <p class="challenge-comment">
+                        {{ challenge.comment }}
+                    </p>
+                </li>
             </ol>
             <div class="challenge-buttons">
                 <a href="" (click)="prevPage($event)">
-                    Cancel
+                    Back
                 </a>
-                <a href="#">
+                <a *ngIf="isAuthor" href="#">
                     Save
                 </a>
             </div>

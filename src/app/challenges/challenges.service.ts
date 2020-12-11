@@ -4,11 +4,13 @@ import { Observable } from 'rxjs';
 import { map,tap, catchError } from 'rxjs/operators'
 
 import { IGetChallenge } from '../interfaces/getChallenge'
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChallengesService {
+
 
   constructor(public http: HttpClient) { }
 
@@ -50,6 +52,10 @@ export class ChallengesService {
 
     getAllChallenges(){
       return this.http.get(`http://localhost:9999/api/activity`)
+    }
+
+    getMyChallenges(userId: string): Observable<any>{
+      return this.http.get(`http://localhost:9999/api/user/${userId}`)
     }
 
     viewChallenge(id: number): Observable<any> {

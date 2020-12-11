@@ -16,6 +16,7 @@ section h2 {
     max-width: 550px;
     height: auto;
     max-height: 400px;
+    margin-right: 50px;
 }
 .challenge-info ol li {
     margin-bottom: 10px;
@@ -53,4 +54,12 @@ textarea#comment {
 
 .challenge-buttons a:hover {
     color: var(--red-touch);
+}
+
+.noAuthor {
+    margin-bottom: 125px !important;
+}
+
+.challenge-comment {
+    white-space: pre-wrap;
 }
