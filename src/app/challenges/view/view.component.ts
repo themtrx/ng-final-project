@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ChallengesService } from '../challenges.service';
 import { Location } from '@angular/common'
 import { UserService } from 'src/app/user/user.service';
-import { resolveCname } from 'dns';
 
 @Component({
   selector: 'app-view-challenge',
@@ -14,6 +13,7 @@ export class ViewChallengeComponent implements OnInit {
 
   @Input() challenge: any
   isAuthor: boolean;
+  loader: boolean;
 
   constructor(
     private challengeService: ChallengesService,
@@ -22,6 +22,7 @@ export class ViewChallengeComponent implements OnInit {
     public location: Location
   ) { 
     this.challenge = Object.create(null)
+    this.loader = true;
    }
 
    prevPage(e: any): void {
@@ -30,15 +31,32 @@ export class ViewChallengeComponent implements OnInit {
      this.location.back()
    }
 
-  ngOnInit(): void {
-    
+  editChallenge(data: Object): void {
+
+    this.loader = true
+    const id = this.challenge._id
+
+    this.challengeService.editChallenge(id, data).subscribe({
+      next: (res) => {
+        this.challenge = res
+        setTimeout(() => this.loader = false, 500) // Loader delay to test it
+      }
+    })
+  }
+
+  renderChallenge(): void{
     const challengeId = this.router.snapshot.params.id
     this.challengeService.viewChallenge(challengeId).subscribe({
       next: (res) => {
         this.challenge = res
         this.isAuthor = this.userService.currentUser._id === this.challenge.author._id
+        this.loader = false
       }
     })
+  }
+
+  ngOnInit(): void {
+    this.renderChallenge()
   }
 
 }

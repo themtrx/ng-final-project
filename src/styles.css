@@ -53,3 +53,13 @@ section {
     text-align: center;
     color: red;
 }
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 30vh;
+}
+
+.emptySection {
+    min-height: 83vh;
+}
