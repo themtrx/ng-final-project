@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IGetChallenge } from 'src/app/interfaces/getChallenge';
 import { ChallengesService } from '../challenges.service';
 
@@ -16,12 +17,27 @@ export class GetChallengeComponent implements OnInit {
     msg: string;
   }
 
-  constructor(public challengeService: ChallengesService) {
+  constructor(
+    public challengeService: ChallengesService,
+    private router: Router
+    ) {
     //If not like that it will give error cause is different then interface
     //If not deaclear this.challenge will throw error in console but still render
     this.challenge = Object.create(null)
     this.loader = true
     this.errorMessage = {error: false, msg: 'There is no picture to load'}
+   }
+
+   addNewChallenge(): void {
+     this.challengeService.addChallenge(this.challenge).subscribe({
+       next: (res) => {
+         const challengeId = res._id
+         this.router.navigate([`/challenges/view/${challengeId}`])
+       },
+       error: (res) => {
+         console.log(res)
+       }
+     })
    }
 
    renderChallenge(): void {
