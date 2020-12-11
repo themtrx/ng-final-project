@@ -1,7 +1,7 @@
-section {
+.section-wrapper {
     margin-bottom: 50px !important;
 }
-section h2 {
+.section-wrapper h2 {
     margin: 70px 0 50px;
     text-align: center;
     font-family: 'Fredoka One', cursive;
@@ -42,7 +42,7 @@ textarea#comment {
     justify-content: space-between;
 }
 
-.challenge-buttons a {
+.challenge-buttons a, .challenge-buttons button {
     padding: 10px;
     width: 30%;
     text-align: center;
@@ -50,9 +50,14 @@ textarea#comment {
     background: var(--purple);
     color: #fff;
     transition: all .2s;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;
 }
 
-.challenge-buttons a:hover {
+.challenge-buttons a:hover, .challenge-buttons button:hover {
     color: var(--red-touch);
 }
 

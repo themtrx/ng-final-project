@@ -65,4 +65,8 @@ export class ChallengesService {
     addChallenge(data: Object): Observable<any> {
       return this.http.post('http://localhost:9999/api/activity/', data , {withCredentials: true })
     }
+
+    editChallenge(id:string, data: Object): Observable<any> {
+      return this.http.put(`http://localhost:9999/api/activity/${id}`, data , {withCredentials: true })
+    }
 }

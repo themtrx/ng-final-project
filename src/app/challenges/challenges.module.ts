@@ -10,6 +10,7 @@ import { ChallengeCardComponent } from './challenge-card/challenge-card.componen
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../guards/auth-guard.guard';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +25,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     CommonModule,
     SharedModule,
     RouterModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FormsModule
   ],
   providers: [
     AuthGuard

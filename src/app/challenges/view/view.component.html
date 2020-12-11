@@ -1,78 +1,84 @@
-<section class="container" [class.noAuthor]="!isAuthor">
-    <h2>
-        View Challenge:
-        <span>{{ challenge.activity }}</span>
-    </h2>
-    <div class="view-challenge">
-        <img [src]="challenge.img" alt="">
-        <div class="challenge-info">
-            <ol>
-                <li>Type: {{ challenge.type }}</li>
-                <li>Participants: {{ challenge.participants }}</li>
-                <li>Price rating: {{ challenge.price }}</li>
-                <li>Accessibility: {{ challenge.accessibility }}</li>
-                <li *ngIf="!challenge.link">
-                    Link: There is no link for this challenge!
-                </li>
-                <li *ngIf="challenge.link">Link: 
-                    <a [href]="challenge.link">Additional information</a>
-                </li>
-                <li *ngIf="isAuthor">
-                    Challenge Status:
-                    <select name="status" id="status" >
-                        <option 
-                            value="In Progress" 
-                            [selected]="challenge.status === 'In Progress'? true: false">
-                                In Progress
-                        </option>
-                        <option
-                            value="Completed" 
-                            [selected]="challenge.status === 'Completed'? true: false">
-                                Completed
-                        </option>
-                        <option 
-                            value="Declined"
-                            [selected]="challenge.status === 'Declined'? true: false">
-                                Declined
-                        </option>
-                        <option 
-                            value="Delayed" [selected]="challenge.status === 'Delayed'? true: false">
-                                Delayed
-                        </option>
-                    </select>
-                </li>
-                <li *ngIf="!isAuthor">
-                    Challenge Status: {{ challenge.status }}
-                </li>
-                <li *ngIf="isAuthor">
-                    <input type="checkbox" id="publishCheck" [checked]="challenge.published || false">
-                    <label for="publishCheck">Share with others</label>
-                </li>
-                <li *ngIf="isAuthor">
-                    <textarea 
-                        name="comment" 
-                        id="comment" 
-                        cols="80" 
-                        rows="10" 
-                        maxlength="600" 
-                        placeholder="Share your thoughts about the challenge....">{{ challenge.comment}}</textarea>
-                </li>
-                <li *ngIf="!isAuthor">
-                    Challenge comment:
-                    <p class="challenge-comment">
-                        {{ challenge.comment }}
-                    </p>
-                </li>
-            </ol>
-            <div class="challenge-buttons">
-                <a href="" (click)="prevPage($event)">
-                    Back
-                </a>
-                <a *ngIf="isAuthor" href="#">
-                    Save
-                </a>
-            </div>
+<section class="container" [class.noAuthor]="!isAuthor" [class.emptySection]="loader">
+    <mat-progress-spinner *ngIf="loader" class="loader" mode="indeterminate" color="accent"></mat-progress-spinner>
+   <div class="section-wrapper" *ngIf="!loader">
+        <h2>
+            View Challenge:
+            <span>{{ challenge.activity }}</span>
+        </h2>
+        <div class="view-challenge">
+            <img [src]="challenge.img" alt="">
+            
+            <form #f="ngForm" (ngSubmit)="editChallenge(f.value)" class="challenge-info">
+                <ol>
+                    <li>Type: {{ challenge.type }}</li>
+                    <li>Participants: {{ challenge.participants }}</li>
+                    <li>Price rating: {{ challenge.price }}</li>
+                    <li>Accessibility: {{ challenge.accessibility }}</li>
+                    <li *ngIf="!challenge.link">
+                        Link: There is no link for this challenge!
+                    </li>
+                    <li *ngIf="challenge.link">Link: 
+                        <a [href]="challenge.link">Additional information</a>
+                    </li>
+                    <li *ngIf="isAuthor">
+                        Challenge Status:
+                        <select #selectStatus="ngModel" name="status" id="status" [ngModel]="challenge.status">
+                            <option 
+                                value="In Progress" 
+                                [selected]="challenge.status === 'In Progress'? true: false">
+                                    In Progress
+                            </option>
+                            <option
+                                value="Completed" 
+                                [selected]="challenge.status === 'Completed'? true: false">
+                                    Completed
+                            </option>
+                            <option 
+                                value="Declined"
+                                [selected]="challenge.status === 'Declined'? true: false">
+                                    Declined
+                            </option>
+                            <option 
+                                value="Delayed" [selected]="challenge.status === 'Delayed'? true: false">
+                                    Delayed
+                            </option>
+                        </select>
+                    </li>
+                    <li *ngIf="!isAuthor">
+                        Challenge Status: {{ challenge.status }}
+                    </li>
+                    <li *ngIf="isAuthor">
+                        <input #published="ngModel" name="published" type="checkbox" id="publishCheck" [checked]="challenge.published || false" [ngModel]="challenge.published">
+                        <label for="publishCheck">Share with others</label>
+                    </li>
+                    <li *ngIf="isAuthor">
+                        <textarea 
+                            #comment="ngModel"
+                            [ngModel]="challenge.comment"
+                            name="comment" 
+                            id="comment" 
+                            cols="80" 
+                            rows="10" 
+                            maxlength="600" 
+                            placeholder="Share your thoughts about the challenge...."></textarea>
+                    </li>
+                    <li *ngIf="!isAuthor">
+                        Challenge comment:
+                        <p class="challenge-comment">
+                            {{ challenge.comment }}
+                        </p>
+                    </li>
+                </ol>
+                <div class="challenge-buttons">
+                    <a href="" (click)="prevPage($event)">
+                        Back
+                    </a>
+                    <button *ngIf="isAuthor" href="#">
+                        Save
+                    </button>
+                </div>
+            </form>
         </div>
-    </div>
+   </div>
 </section>
 <app-footer></app-footer>
