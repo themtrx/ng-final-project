@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logOutHandler(){
-    this.userService.logOut().subscribe(() => this.router.navigate(['/home']))
+    this.userService.logOut().subscribe(() => this.router.navigate(['/user/login']))
   }
 
   ngOnInit(): void {
