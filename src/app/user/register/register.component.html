@@ -1,13 +1,24 @@
 <section class="container"> 
     <img [src]="registerImg" alt="register">
-    <div class="reg-form">
+    <form #f="ngForm" class="reg-form" (ngSubmit)="regHandler(f.value)">
         <label for="username">Username: </label>
-        <input type="text" name="username" id="username">
+        <input #usernameInp="ngModel" type="text" name="username" id="username" ngModel required>
+        <div *ngIf="usernameInp.touched && usernameInp.errors?.required"  class="error-msg">Username is required!</div>
         <label for="password">Password: </label>
-        <input type="password" name="password" id="password">
+        <input #passwordInp="ngModel" type="password" name="password" id="password" ngModel required>
         <label for="rePassword">Repeat password: </label>
-        <input type="password" name="rePassword" id="rePassword">
-        <a id="regBtn">Register</a>
+        <input #rePasswordInp="ngModel" type="password" name="rePassword" id="rePassword" ngModel required>
+        <div 
+            *ngIf="passwordInp.touched && passwordInp.errors?.required"  class="error-msg">
+                Password is required!
+        </div>
+        <div 
+            *ngIf="(passwordInp.touched && rePasswordInp.touched) 
+            && (passwordInp.viewModel !== rePasswordInp.viewModel)"  class="error-msg">
+                Password should match!
+        </div>
+        <div *ngIf="errormsg" class="error-msg">{{errormsg}}</div>
+        <button [disabled]="f.invalid" id="regBtn">Register</button>
         <p>If you already have account <a routerLink="/user/login">Log In</a></p>
-    </div>
+    </form>
 </section>
