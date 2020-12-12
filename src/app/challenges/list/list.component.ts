@@ -12,6 +12,7 @@ import { ChallengesService } from '../challenges.service';
 export class ChallengesListComponent implements OnInit {
 
 @Input() allChallenges: any[]
+onlyUserList: boolean = false
 
   constructor(
     private challengeService: ChallengesService,
@@ -21,8 +22,9 @@ export class ChallengesListComponent implements OnInit {
 
   ngOnInit(): void {
     const activeRouterChild = this.router.routerState.snapshot.url.split('/').reverse()[0]
-
-    if(activeRouterChild === 'my'){
+    this.onlyUserList = activeRouterChild === 'my' || false
+    
+    if(this.onlyUserList){
       const currentUserId = this.userService.currentUser._id
       this.challengeService.getMyChallenges(currentUserId).subscribe({
         next: (res) => {

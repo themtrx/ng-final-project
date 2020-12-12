@@ -1,3 +1,5 @@
+    <h2 *ngIf="!onlyUserList">All Challenges</h2>
+    <h2 *ngIf="onlyUserList">My Challenges</h2>
 <section class="container">
     <app-challenge-card 
         *ngFor="let challenge of allChallenges"

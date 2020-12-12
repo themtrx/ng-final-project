@@ -6,6 +6,7 @@ import { ChallengesModule } from '../challenges/challenges.module';
 
 import { PublicComponent } from './public/public.component';
 import { AuthGuard } from '../guards/auth-guard.guard';
+import { appInterceptorProvider } from './app.interceptor';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AuthGuard } from '../guards/auth-guard.guard';
     ChallengesModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    appInterceptorProvider
   ],
   exports: [
     PublicComponent,
