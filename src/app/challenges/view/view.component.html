@@ -76,6 +76,9 @@
                     <button *ngIf="isAuthor" href="#">
                         Save
                     </button>
+                    <a *ngIf="isAuthor" href="#" (click)="deleteChallenge($event)">
+                        Delete
+                    </a>
                 </div>
             </form>
         </div>
