@@ -8,22 +8,22 @@
         <nav>
             <ul *ngIf="isLogged">
                 <li>
-                    <a routerLink="/challenges/get">
+                    <a routerLink="/challenges/get" routerLinkActive="active-link">
                         New Challenge
                     </a>
                 </li>
                 <li>
-                    <a routerLink="/challenges/list">
+                    <a routerLink="/challenges/list" routerLinkActive="active-link">
                         All Challenges
                     </a>
                 </li>
                 <li>
-                    <a routerLink="/challenges/my">
+                    <a routerLink="/challenges/my" routerLinkActive="active-link">
                         My Challenges
                     </a>
                 </li>
                 <li>
-                    <a routerLink="/user/profile">
+                    <a routerLink="/user/profile" routerLinkActive="active-link">
                         My Profile
                     </a>
                 </li>
@@ -35,12 +35,12 @@
             </ul>
             <ul *ngIf="!isLogged">
                 <li>
-                    <a routerLink="/user/login">
+                    <a routerLink="/user/login" routerLinkActive="active-link">
                         Login
                     </a>
                 </li>
                 <li>
-                    <a routerLink="/user/register">
+                    <a routerLink="/user/register" routerLinkActive="active-link">
                         Register
                     </a>
                 </li>
