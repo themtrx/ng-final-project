@@ -70,4 +70,8 @@ export class ChallengesService {
     editChallenge(id:string, data: Object): Observable<any> {
       return this.http.put(`activity/${id}`, data)
     }
+
+    deleteChallenge(id:string): Observable<any> {
+      return this.http.delete(`activity/${id}`)
+    }
 }

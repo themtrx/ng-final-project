@@ -1,27 +1,68 @@
-# GetChallenge
+# Dump Bore
+> SoftUni final project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+## Table of contents
+* [General info](#general-info)
+* [Screenshot](#screenshot)
+* [Technologies](#technologies)
+* [How to use](#how-to-use)
+* [Features](#features)
+* [Inspiration](#inspiration)
+* [Contributing](#contributing)
 
-## Development server
+## General info
+Add more general information about project. What the purpose of the project is? Motivation?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Screenshot
+![Example screensho](./src/assets/img/screenshot.png)
 
-## Code scaffolding
+## Technologie
+* Angular <img src="https://img.icons8.com/color/48/000000/angularjs.png"/>
+* For random ideas [BoaredAPI](https://www.boredapi.com/)
+* For images [UnsplashAPI](https://unsplash.com/developers)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How to use
 
-## Build
+Edit src/environments/environment.ts and evnironment.prod.ts for your API
+Currently applications is using environment.apiUrl varible from environment.ts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+# Clone this repository
+$ git clone https://github.com/themtrx/ng-final-project
 
-## Running unit tests
+# Go into the repository
+$ cd ng-final-project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Install dependencies
+$ npm install
 
-## Running end-to-end tests
+# Run the app
+$ ng serve --open
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Features
+Ready features for registered users (private area):
+* Get a random challenge to do
+* Save the challenge to your profile
+* Get list of challenges saved by all registered users
+* Get list only with your challenges
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Unregistered users have access only home page (public area).
+They have to chose either to log in or register.
+
+To-do list:
+* Filters for challenges lists
+* Connect with cloudinary to save and show user profile picture
+
+## Inspiration
+This application is final project for Angular module in [SoftUni](https://softuni.bg/)
+It is totally for educational purposes and experiments.
+
+## Contributing
+Please feel free to contribute and add more features
+1. Fork it
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request

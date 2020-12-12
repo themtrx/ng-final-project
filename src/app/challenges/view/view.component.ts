@@ -45,6 +45,20 @@ export class ViewChallengeComponent implements OnInit {
     })
   }
 
+  deleteChallenge(e: any): void {
+    e.preventDefault()
+    e.stopPropagation()
+    const challengeId = this.router.snapshot.params.id
+    this.challengeService.deleteChallenge(challengeId).subscribe({
+      next: () => {
+        this.location.back()
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+  }
+
   renderChallenge(): void{
     const challengeId = this.router.snapshot.params.id
     this.challengeService.viewChallenge(challengeId).subscribe({
