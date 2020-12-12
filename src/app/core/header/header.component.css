@@ -38,3 +38,7 @@ nav ul li a {
 nav ul li a:hover {
     color: var(--red-touch);
 }
+
+nav ul li a.active-link {
+    color: var(--red-touch);
+}
