@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x'
 import * as  Cloudinary from 'cloudinary-core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UserRoutingModule } from './user-routing.module';
 
 
 
@@ -26,6 +27,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     SharedModule,
     RouterModule,
     MatProgressSpinnerModule,
+    UserRoutingModule,
     CloudinaryModule.forRoot(Cloudinary, { 
       cloud_name: 'dvyudx4pv', 
       upload_preset: 'firstGallery'}),

@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../guards/auth-guard.guard';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
+import { ChallengesRoutingModule } from './challenges-routing.module';
 
 
 
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     RouterModule,
     MatProgressSpinnerModule,
+    ChallengesRoutingModule,
     FormsModule
   ],
   providers: [
