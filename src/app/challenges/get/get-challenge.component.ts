@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IGetChallenge } from 'src/app/interfaces/getChallenge';
+import { IGetRandomActivity } from 'src/app/interfaces/getActivity';
 import { ChallengesService } from '../challenges.service';
 
 @Component({
