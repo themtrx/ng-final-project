@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map,tap, catchError } from 'rxjs/operators'
+import { IChallenge } from '../interfaces/challenge';
 
-import { IGetChallenge } from '../interfaces/getChallenge'
+import { IGetRandomActivity } from '../interfaces/getActivity'
 import { UserService } from '../user/user.service';
 
 @Injectable({
@@ -14,8 +15,8 @@ export class ChallengesService {
 
   constructor(public http: HttpClient) { }
 
-    getNewChallenge(): Observable<IGetChallenge>{
-      return this.http.get<IGetChallenge>('https://www.boredapi.com/api/activity')
+    getNewChallenge(): Observable<IGetRandomActivity>{
+      return this.http.get<IGetRandomActivity>('https://www.boredapi.com/api/activity')
     }
 
     

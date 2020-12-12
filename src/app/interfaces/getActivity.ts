@@ -1,4 +1,4 @@
-export interface IGetChallenge {
+export interface IGetRandomActivity {
     activity: string;
     type: string;
     participants: number,
