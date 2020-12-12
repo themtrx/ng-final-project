@@ -7,17 +7,18 @@ import { ChallengesModule } from '../challenges/challenges.module';
 import { PublicComponent } from './public/public.component';
 import { AuthGuard } from '../guards/auth-guard.guard';
 import { appInterceptorProvider } from './app.interceptor';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
   declarations: [
     PublicComponent,
+    ErrorComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule,
-    ChallengesModule
   ],
   providers: [
     AuthGuard,
@@ -25,6 +26,7 @@ import { appInterceptorProvider } from './app.interceptor';
   ],
   exports: [
     PublicComponent,
+    ErrorComponent
   ]
 })
 export class CoreModule { }

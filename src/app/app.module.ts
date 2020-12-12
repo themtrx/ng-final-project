@@ -26,15 +26,11 @@ import { ChallengesRoutingModule } from './challenges/challenges-routing.module'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserRoutingModule,
-    ChallengesRoutingModule,
     CoreModule,
-    ChallengesModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     SharedModule,
-    UserModule
   ],
   providers: [
     ChallengesService,

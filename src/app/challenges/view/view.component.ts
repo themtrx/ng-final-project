@@ -40,6 +40,7 @@ export class ViewChallengeComponent implements OnInit {
       next: (res) => {
         this.challenge = res
         setTimeout(() => this.loader = false, 500) // Loader delay to test it
+        this.renderChallenge()
       }
     })
   }

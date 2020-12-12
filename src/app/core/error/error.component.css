@@ -1,0 +1,9 @@
+section {
+    text-align: center;
+}
+
+section img {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+}

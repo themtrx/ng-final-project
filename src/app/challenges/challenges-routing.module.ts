@@ -6,39 +6,38 @@ import { ViewChallengeComponent } from './view/view.component';
 
 const routes: Routes = [
   {
-    path: 'challenges',
-    canActivateChild: [AuthGuard],
-    children: [
-        {
-            path: 'list',
-            component: ChallengesListComponent,
-            data: {
-              isLogged: true
-            }
-          },
-          {
-            path: 'view/:id',
-            component: ViewChallengeComponent,
-            data: {
-              isLogged: true
-            }
-          },
-          {
-            path: 'get',
-            component: GetChallengeComponent,
-            data: {
-              isLogged: true
-            }
-          },
-          {
-            path: 'my',
-            component: ChallengesListComponent,
-            data: {
-              isLogged: true
-            }
-          }
-    ]
-  }
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/home'
+  },
+  {
+      path: 'list',
+      component: ChallengesListComponent,
+      data: {
+        isLogged: true
+      }
+    },
+    {
+      path: 'view/:id',
+      component: ViewChallengeComponent,
+      data: {
+        isLogged: true
+      }
+    },
+    {
+      path: 'get',
+      component: GetChallengeComponent,
+      data: {
+        isLogged: true
+      }
+    },
+    {
+      path: 'my',
+      component: ChallengesListComponent,
+      data: {
+        isLogged: true
+      }
+    }
 ]
 
 export const ChallengesRoutingModule = RouterModule.forChild(routes)
