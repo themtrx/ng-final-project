@@ -1,0 +1,21 @@
+section {
+    margin-top: 100px !important;
+    margin-bottom: 110px !important;
+    height: 55vh;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.info-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.info-wrap img {
+    max-width: 200px;
+    margin-right: 50px;
+}

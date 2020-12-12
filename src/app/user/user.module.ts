@@ -6,6 +6,11 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../guards/auth-guard.guard';
+import { ProfileComponent } from './profile/profile.component';
+
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x'
+import * as  Cloudinary from 'cloudinary-core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -13,19 +18,25 @@ import { AuthGuard } from '../guards/auth-guard.guard';
   declarations: [
     RegisterComponent,
     LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    MatProgressSpinnerModule,
+    CloudinaryModule.forRoot(Cloudinary, { 
+      cloud_name: 'dvyudx4pv', 
+      upload_preset: 'firstGallery'}),
   ],
   providers: [
     AuthGuard
   ],
   exports: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ]
 })
 export class UserModule { }
