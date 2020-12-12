@@ -51,22 +51,22 @@ export class ChallengesService {
     }
 
     getAllChallenges(){
-      return this.http.get(`http://localhost:9999/api/activity`)
+      return this.http.get(`activity`)
     }
 
     getMyChallenges(userId: string): Observable<any>{
-      return this.http.get(`http://localhost:9999/api/user/${userId}`)
+      return this.http.get(`user/${userId}`)
     }
 
     viewChallenge(id: number): Observable<any> {
-      return this.http.get(`http://localhost:9999/api/activity/${id}`)
+      return this.http.get(`activity/${id}`)
     }
 
     addChallenge(data: Object): Observable<any> {
-      return this.http.post('http://localhost:9999/api/activity/', data , {withCredentials: true })
+      return this.http.post('activity/', data)
     }
 
     editChallenge(id:string, data: Object): Observable<any> {
-      return this.http.put(`http://localhost:9999/api/activity/${id}`, data , {withCredentials: true })
+      return this.http.put(`activity/${id}`, data)
     }
 }
