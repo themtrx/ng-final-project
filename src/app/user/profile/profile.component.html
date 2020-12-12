@@ -1,0 +1,16 @@
+<section class="container" [class.emptySection]="loader">
+    <mat-progress-spinner *ngIf="loader" class="loader" mode="indeterminate" color="accent"></mat-progress-spinner>
+    <div class="section-wrapper" *ngIf="!loader">
+        <h2>Your Profile information</h2>
+        <div class="info-wrap">
+            <img [src]="profilePicture" alt="profile picture">
+            <div>
+                <ul>
+                    <li>Username: {{user.username}}</li>
+                    <li>Challenges: {{user.allActivities.length || 'No added challenges.'}} </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

@@ -6,6 +6,7 @@
             <li>Type: {{ challenge.type }}</li>
             <li>Participants: {{ challenge.participants }}</li>
             <li>Status: {{ challenge.status }}</li>
+            <li>Author: {{ challenge.author.username || user }}</li>
         </ol>
         <div class="view-challenge-wrap">
             <a [routerLink]="['/challenges/view/', challenge._id ]" class="view-challenge-btn">

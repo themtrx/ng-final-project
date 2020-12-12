@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-challenge-card',
@@ -8,8 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ChallengeCardComponent implements OnInit {
   
   @Input() challenge: any
-  
-  constructor() { }
+  user: string = this.userService.currentUser.username
+
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
   }
