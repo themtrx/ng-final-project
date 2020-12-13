@@ -2,7 +2,6 @@
 > SoftUni final project
 
 ## Table of contents
-* [General info](#general-info)
 * [Screenshot](#screenshot)
 * [Technologies](#technologies)
 * [How to use](#how-to-use)
