@@ -10,9 +10,6 @@
 * [Inspiration](#inspiration)
 * [Contributing](#contributing)
 
-## General info
-Add more general information about project. What the purpose of the project is? Motivation?
-
 ## Screenshot
 ![Example screensho](./src/assets/img/screenshot.png)
 
